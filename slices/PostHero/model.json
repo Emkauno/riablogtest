@@ -1,0 +1,27 @@
+{
+  "id": "post_hero",
+  "type": "SharedSlice",
+  "name": "PostHero",
+  "description": "PostHero",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "PostHero",
+      "primary": {
+        "post_hero_image": {
+          "type": "Image",
+          "config": {
+            "label": "post hero image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

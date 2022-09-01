@@ -1,0 +1,26 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Shadow",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Dolore exercitation laborum elit deserunt nulla nostrud et labore ipsum.",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "hero"
+  }
+]

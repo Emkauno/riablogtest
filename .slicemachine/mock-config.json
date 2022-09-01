@@ -1,0 +1,33 @@
+{
+  "_cts": {
+    "homepage": {},
+    "blog_post": {},
+    "category": {},
+    "bloggrid": {}
+  },
+  "slices": {
+    "Hero": {},
+    "PostHero": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "PostContent": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    },
+    "RelatedPosts": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "FeaturedPost": {},
+    "PostCard": {
+      "default": {
+        "primary": {}
+      }
+    }
+  }
+}

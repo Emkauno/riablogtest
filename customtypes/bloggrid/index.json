@@ -1,0 +1,9 @@
+{
+  "id": "bloggrid",
+  "label": "BlogGrid",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {}
+  }
+}
