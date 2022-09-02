@@ -1,5 +1,6 @@
 import { PostHeader, PostSocial, SocialLinks } from "./PostPageStyles"
 import { GridItemTag, GridItemTagContainer } from "../PostsGridStyles"
+import { PrismicRichText } from "@prismicio/react";
 import styled from 'styled-components'
 
 const PageContainer = styled.div`
@@ -44,9 +45,8 @@ const PostHero = ({slice, tags}) => {
           <a href="#"><img src="/linkedin.svg"/></a> 
         </SocialLinks>
       </PostSocial>
-      <h1>The World We Share: Tenzing’s Story</h1>
+      <PrismicRichText field={primary.title}/>
       <p>june 14, 2022</p>
-      <h1>{console.log(tags)}</h1>
       <img src={primary.post_hero_image.url}/>
     </PostHeader>
     </SectionContainer>

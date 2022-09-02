@@ -262,6 +262,32 @@
                     "constraint": {},
                     "thumbnails": []
                   }
+                },
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "strong,em,hyperlink,heading3"
+                  }
+                },
+                "featured_text": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "featured text",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,strong,em,hyperlink"
+                  }
+                },
+                "grid_image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "grid image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
                 }
               },
               "items": {},
@@ -284,7 +310,30 @@
                 },
                 "alt": null,
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e"
+                "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6"
+              },
+              "title": [
+                {
+                  "type": "heading3",
+                  "text": "During",
+                  "spans": []
+                }
+              ],
+              "featured_text": [
+                {
+                  "type": "paragraph",
+                  "text": "Eiusmod mollit dolor dolor consequat enim ipsum occaecat Lorem. Elit incididunt reprehenderit sit velit irure mollit amet officia voluptate.",
+                  "spans": []
+                }
+              ],
+              "grid_image": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": null,
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88"
               }
             },
             "slice_type": "post_hero"

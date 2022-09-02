@@ -11,13 +11,7 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "title": [
-      {
-        "type": "paragraph",
-        "text": "Aute pariatur mollit magna consequat deserunt pariatur aliqua cillum laboris consequat ipsum duis ullamco minim. Cillum esse sit reprehenderit non.",
-        "spans": []
-      }
-    ],
+    "featured_post": false,
     "slices": []
   }
 }

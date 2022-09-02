@@ -32,6 +32,10 @@ export const linkResolver = doc => {
       return `/blog/${doc.uid}`
   }
 
+  if (properties.type === "blog_post") {
+      return `/blog/${doc.uid}`
+  }
+
   return "/";
 };
 

@@ -11,6 +11,7 @@ export const FeaturedBox= styled.div`
   justify-content:center;
   gap: 36px;
   cursor: pointer;
+  margin-bottom: 40px;
 
   @media(max-width: 768px){
     flex-direction: column;
@@ -39,6 +40,7 @@ export const FeaturedText = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  flex-wrap: wrap;
   h3 {
     margin: 0;
     font-weight: 700;
@@ -46,7 +48,8 @@ export const FeaturedText = styled.div`
     line-height: 28px;
     letter-spacing: 0.15px;
     color: #FF6100;
-    margin-bottom: 16px;
+    display: inline-block;
+    margin-right: 24px;
     @media(max-width: 450px){
     font-size: 16px;
 }
@@ -57,6 +60,7 @@ export const FeaturedText = styled.div`
     font-size: 38px;
     line-height: 135%;
     color: rgba(0, 17, 51, 0.8);
+    margin-top: 16px;
     margin-bottom: 24px;
     @media(max-width: 450px){
     font-size: 32px;
@@ -93,9 +97,9 @@ export const FeaturedImg = styled.div`
   max-width: 450px;
   min-height: 400px;
   background-image: ${props => props.bgImg ? `url(${props.bgImg})` : ""};
-  background-size: 95%;
+  background-size: 100%;
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: top center;
   background-origin: center;
   background-color: #fbeae0;
   border-radius: 23px;
@@ -106,6 +110,6 @@ export const FeaturedImg = styled.div`
   }
 
   ${FeaturedBox}:hover && {
-    background-size: 100%;
+    background-size: 105%;
   }
   `

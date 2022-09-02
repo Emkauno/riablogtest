@@ -18,6 +18,32 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "strong,em,hyperlink,heading3"
+          }
+        },
+        "featured_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "featured text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,strong,em,hyperlink"
+          }
+        },
+        "grid_image": {
+          "type": "Image",
+          "config": {
+            "label": "grid image",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {},
