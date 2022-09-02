@@ -15,3 +15,15 @@ module.exports = {
     styledComponents: true
   }
 }
+
+module.exports = {
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/blog',
+        permanent: true,
+      },
+    ]
+  },
+}
