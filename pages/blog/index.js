@@ -25,7 +25,8 @@ const index = (posts) => {
   const results = posts.posts.results
   let featuredPost = []
 
-  results.map((post) => post.data.featured_post && featuredPost.push(post))
+  results.map((post) => post.data.featured_blog_post && featuredPost.push(post))
+
 
   return (
     <PageContainer>

@@ -12,13 +12,22 @@
           "placeholder": ""
         }
       },
-      "featured_post": {
+      "featured_category_post": {
         "type": "Boolean",
         "config": {
-          "label": "Featured Post",
-          "default_value": false,
+          "label": "Featured Category Post",
+          "placeholder_false": "false",
           "placeholder_true": "true",
-          "placeholder_false": "false"
+          "default_value": false
+        }
+      },
+      "featured_blog_post": {
+        "type": "Boolean",
+        "config": {
+          "label": "Featured Blog post",
+          "placeholder_false": "false",
+          "placeholder_true": "true",
+          "default_value": false
         }
       },
       "slices": {
