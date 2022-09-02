@@ -40,7 +40,7 @@ const PostHero = ({slice, tags}) => {
       <PostSocial>
       <GridItemTagContainer heroTag={true}>
         {tags.map((tag, i) => 
-        <Link href={`/${tag[i]}`} key={`${tag[i]}-tag`}>
+        <Link href={`/${tagSlug[i]}`} key={`${tag[i]}-tag`}>
           <GridItemTag heroTag={true} key={`${tag}-tag`}>{tag}</GridItemTag>
           </Link>
           )}
