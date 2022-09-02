@@ -12,6 +12,7 @@ const NavContainer = styled.div`
   margin-bottom: 45px;
   padding: 0 45px;
   gap: 8px;
+  flex-wrap: wrap;
 `
 const NavItem = styled.div`
   padding: 12px 24px;
