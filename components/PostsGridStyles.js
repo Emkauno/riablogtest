@@ -8,6 +8,7 @@ export const GridContainer = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   gap: 30px; 
+  margin-bottom: 45px;
 `
 export const GridItem  = styled.div`
   width: 100%;
@@ -93,19 +94,42 @@ export const GridItemTagContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 8px;
+  gap: ${props => props.heroTag ? "20px": "8px"};
 margin: 0;  flex-wrap: wrap;
 `
 export const GridItemTag = styled.div`
   font-weight: 700;
-  font-size: 12px;
+  font-size:  ${props => props.heroTag ? "24px": "12px"};
   line-height: 16px;
-  color: #FF6100;
-  padding: 4px 11px;
-  background: #fff7f2;
+  color: var(--Ria-orange);
+  padding:  ${props => props.heroTag ? "0": "4px 11px"};
+  background: ${props => props.heroTag ? "none": "#fff7f2"} ;
   display: inline-block;
   border-radius: 100px;
   max-width: 30%;
+  transition: all .3s ease;
+  position: relative;
+  cursor: pointer;
+   &:hover {
+    background: ${props => props.heroTag ? "none" : "var(--Ria-orange)"} ;
+    color: ${props => props.heroTag ? "none" : "white"};
+    &:after {
+      transform: scaleX(1);
+
+    }
+  }
+  &:after {
+    content:"";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -6px;
+    left: 0;
+    transform: scaleX(0);
+    transition: all .3s ease;
+    transform-origin: left;
+    background: var(--Ria-orange);
+  }
 `
 export const GridItemText = styled.div`
   width: 100%;
@@ -114,7 +138,7 @@ export const GridItemText = styled.div`
   gap:16px;
   h3 {
     font-weight: 700;
-    font-size: 22px;
+    font-size: 21px;
     line-height: 135%;
     color: #333333;
     margin: 0;

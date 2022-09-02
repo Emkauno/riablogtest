@@ -6,6 +6,7 @@ export const PostCard = ({category, cardImg, cardTitle, cardText, date, uid}) =>
   const postDate = new Date(date)
   const stringDate = postDate.toString()
   const publicationDate = `${stringDate.slice(4,10)}, ${stringDate.slice(11,15)}`
+  const categorySlug = category.map(item => item.split(" ").join("-").toLowerCase())
   return (
     <Link href={`/blog/${uid}`}>
       <GridItem>
@@ -13,7 +14,7 @@ export const PostCard = ({category, cardImg, cardTitle, cardText, date, uid}) =>
         <img src={cardImg}/>
       </GridItemImg>
       <GridItemText>
-        <GridItemTagContainer>{category.map((pill, i) => <GridItemTag key={`category-${i}`}>{pill}</GridItemTag>)}</GridItemTagContainer>
+        <GridItemTagContainer>{category.map((pill, i) => <Link href={`/${categorySlug[i]}`} key={`category-${i}`}><GridItemTag>{pill}</GridItemTag></Link>)}</GridItemTagContainer>
         
         <PrismicRichText field={cardTitle}/>
         <PrismicRichText field={cardText}/>

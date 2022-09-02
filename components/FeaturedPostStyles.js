@@ -99,7 +99,7 @@ export const FeaturedImg = styled.div`
   background-image: ${props => props.bgImg ? `url(${props.bgImg})` : ""};
   background-size: 100%;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: center center;
   background-origin: center;
   background-color: #fbeae0;
   border-radius: 23px;

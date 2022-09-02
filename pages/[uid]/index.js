@@ -46,7 +46,6 @@ const Category = props => {
     <FeaturedPost data={featuredPost[0]}/>
     <PostsGrid posts={filteredPosts}>
      </PostsGrid>
-     <h1>hola</h1>
     </SectionContainer>
     </PageContainer>
   );

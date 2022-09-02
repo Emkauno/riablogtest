@@ -366,9 +366,10 @@
                 "title": {
                   "type": "StructuredText",
                   "config": {
-                    "single": "heading1",
                     "label": "Title",
-                    "placeholder": "This is where it all begins..."
+                    "placeholder": "This is where it all begins...",
+                    "allowTargetBlank": true,
+                    "single": "heading3,strong,em,hyperlink"
                   }
                 }
               },
@@ -387,8 +388,8 @@
             "primary": {
               "title": [
                 {
-                  "type": "heading1",
-                  "text": "Somebody",
+                  "type": "heading3",
+                  "text": "Everything",
                   "spans": []
                 }
               ]

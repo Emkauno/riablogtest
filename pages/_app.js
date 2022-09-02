@@ -1,9 +1,9 @@
-import '../styles/globals.css'
-import Link from 'next/link'
-import { PrismicProvider } from '@prismicio/react'
-import { PrismicPreview } from '@prismicio/next'
-import { linkResolver, repositoryName } from '../prismicio'
-import { Wrapper } from "../components/LayoutStyles"
+import "../styles/globals.css";
+import Link from "next/link";
+import { PrismicProvider } from "@prismicio/react";
+import { PrismicPreview } from "@prismicio/next";
+import { linkResolver, repositoryName } from "../prismicio";
+import BlogNavbar from "../components/BlogNavbar";
 
 const internalLinkComponent = ({ href, children, ...props }) => (
   <Link href={href}>
@@ -18,10 +18,11 @@ function App({ Component, pageProps, router }) {
       internalLinkComponent={internalLinkComponent}
     >
       <PrismicPreview repositoryName={repositoryName}>
-         <Component {...pageProps} />
+        {pageProps?.doc?.type === "blog_post" ? "" : <BlogNavbar />}
+        <Component {...pageProps} />
       </PrismicPreview>
     </PrismicProvider>
-    )
+  );
 }
 
-export default App
+export default App;

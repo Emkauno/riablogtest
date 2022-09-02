@@ -7,7 +7,6 @@ export const PostContainer = styled.div`
   align-items: flex-start; 
   justify-content: flex-start;
   margin-bottom: 100px;
-  background: lime;
 `
   
 export const PostHeader = styled.div`
@@ -17,7 +16,7 @@ export const PostHeader = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
 
-  h1{
+  h3{
     font-weight: 800;
     margin: 0;
     margin-bottom: 8px;
@@ -26,6 +25,7 @@ export const PostHeader = styled.div`
     letter-spacing: 0.15px;
     color: rgba(0, 17, 51, 0.8);
     max-width: 540px;
+    margin-top: 24px;
   }
   p {
       font-weight: 700;

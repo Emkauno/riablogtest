@@ -1,6 +1,7 @@
 import { PostHeader, PostSocial, SocialLinks } from "./PostPageStyles"
 import { GridItemTag, GridItemTagContainer } from "../PostsGridStyles"
 import { PrismicRichText } from "@prismicio/react";
+import  Link from 'next/link'
 import styled from 'styled-components'
 
 const PageContainer = styled.div`
@@ -19,6 +20,7 @@ const SectionContainer = styled.div`
   flex-direction: column; 
   justify-content: center;
   align-items: center;
+  padding-top: 65px;
 
   img {
     width: 100%;
@@ -29,14 +31,18 @@ const SectionContainer = styled.div`
 
 const PostHero = ({slice, tags}) => {
   const { primary } = slice
-  return (
+  const tagSlug = tags.map(tag => tag.split(" ").join("-").toLowerCase())
+
+   return (
     <PageContainer>
       <SectionContainer>
       <PostHeader>
       <PostSocial>
-      <GridItemTagContainer>
-        {tags.map((tag) => 
-          <GridItemTag key={`${tag}-tag`}>{tag}</GridItemTag>
+      <GridItemTagContainer heroTag={true}>
+        {tags.map((tag, i) => 
+        <Link href={`/${tag[i]}`} key={`${tag[i]}-tag`}>
+          <GridItemTag heroTag={true} key={`${tag}-tag`}>{tag}</GridItemTag>
+          </Link>
           )}
         </GridItemTagContainer>
         <SocialLinks>

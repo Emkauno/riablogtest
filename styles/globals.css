@@ -1,8 +1,9 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap'); */
+ @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap'); 
 * {
   box-sizing: border-box;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   scrollbar-width: thin;
+  animation-fill-mode: backwards;
 }
 
 @media (max-width: 768px) {

@@ -33,7 +33,14 @@
     },
     "RelatedPosts": {
       "default": {
-        "primary": {}
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          }
+        }
       }
     },
     "FeaturedPost": {},
