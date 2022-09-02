@@ -21,7 +21,6 @@ const Post = (props) => {
   let relatedPosts= []
   const getRelatedPosts = postTags.map(post => post.includes(docTag[0]) !== false && relatedTags.push(post))
   const postsFilter = postsArray.map((post,i)=> getRelatedPosts[i] !== false & post.uid !== doc.uid & relatedPosts.length < 3 && relatedPosts.push(post))
-  console.log(doc)
   return (
     <Layout page={doc} activeDocMeta={activeDoc} >
       <SliceZone slices={doc?.data?.slices || []} tags={doc.tags} relatedPosts={relatedPosts}/>
