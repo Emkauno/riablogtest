@@ -130,6 +130,9 @@ export const GridItemTag = styled.div`
     transform-origin: left;
     background: var(--Ria-orange);
   }
+  @media(max-width: 600px){
+    max-width: unset;
+  }
 `
 export const GridItemText = styled.div`
   width: 100%;
