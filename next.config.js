@@ -4,19 +4,15 @@ const nextConfig = {
   swcMinify: true,
 }
 
-module.exports = nextConfig
-
 module.exports = {
+  nextConfig,
   images: {
     domains: ["images.prismic.io"]
   },
   compiler: {
     // Enables the styled-components SWC transform
     styledComponents: true
-  }
-}
-
-module.exports = {
+  },
   async redirects() {
     return [
       {
