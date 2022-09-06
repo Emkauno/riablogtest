@@ -32,14 +32,14 @@ const index = (props) => {
   );
 
   return (
-    <Layout>
-    <PageContainer>
-      <SectionContainer>
-         <FeaturedPost data={featuredPost[0]} /> 
-        <PostsGrid posts={posts}></PostsGrid> 
-      </SectionContainer>
-    </PageContainer>
-    </Layout>
+      <Layout>
+      <PageContainer>
+        <SectionContainer>
+          <FeaturedPost data={featuredPost[0]} /> 
+          <PostsGrid posts={posts}></PostsGrid> 
+        </SectionContainer>
+      </PageContainer>
+      </Layout>
   );
 };
 

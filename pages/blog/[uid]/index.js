@@ -6,7 +6,6 @@ import { FeaturedPost } from "../../../components/FeaturedPost";
 import styled from "styled-components";
 import { Layout } from "../../../components/Layout";
 import { useRouter } from "next/router";
-
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;

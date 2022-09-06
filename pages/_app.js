@@ -4,7 +4,7 @@ import { PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
 import { linkResolver, repositoryName } from "../prismicio";
 import BlogNavbar from "../components/BlogNavbar";
-
+import { AnimatePresence } from 'framer-motion'
 const internalLinkComponent = ({ href, children, ...props }) => (
   <Link href={href}>
     <a {...props}>{children}</a>
@@ -19,7 +19,9 @@ function App({ Component, pageProps, router }) {
     >
       <PrismicPreview repositoryName={repositoryName}>
         <BlogNavbar {...pageProps}/>
-        <Component {...pageProps} />
+        <AnimatePresence  exitBeforeEnter>
+            <Component {...pageProps} key={router.asPath.split("/")[2]}/>
+        </AnimatePresence>
       </PrismicPreview>
     </PrismicProvider>
   );

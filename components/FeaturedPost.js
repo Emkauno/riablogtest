@@ -1,6 +1,7 @@
 import { FeaturedBox, FeaturedHalf, FeaturedText, FeaturedImg } from './FeaturedPostStyles'
 import {  GridItemTagContainer, GridItemTag} from "./PostsGridStyles"
 import Link from 'next/link'
+
 export const FeaturedPost = ({ data }) => {
   const {tags, uid} = data
   const date = data.last_publication_date
@@ -10,6 +11,8 @@ export const FeaturedPost = ({ data }) => {
   const publicationDate = `${stringDate.slice(4,10)}, ${stringDate.slice(11,15)}`
 
   return (
+   
+
     <Link href={`/blog/${uid}`}>
     <FeaturedBox>
       <FeaturedHalf>
