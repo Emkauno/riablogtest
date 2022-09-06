@@ -31,9 +31,8 @@ export const linkResolver = doc => {
   if (properties.type === "blog_post") {
     return `/blog/${doc.uid}`
   } 
-
   if (properties.type === "category") {
-    return `/${doc.uid}`
+    return `/blog/${doc.uid}`
   } 
   return "/";
 };
@@ -45,8 +44,6 @@ export let locales = [];
 /** 
 *@type {prismic.ClientConfig["routes"]}
 */
-
-
 // This factory function allows smooth preview setup
 export function createClient(config = {}) {
   const client = prismic.createClient(endpoint, {
@@ -93,8 +90,5 @@ export const hrefResolver = doc => {
     return `/`;
   }
 
-  if (doc.type === "blog_post") {
-    return `/blog/${doc.uid}` 
-  }
 
 };

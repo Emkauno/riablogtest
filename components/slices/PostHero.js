@@ -29,9 +29,13 @@ const SectionContainer = styled.div`
 `
 
 
-const PostHero = ({slice, tags}) => {
-  const { primary } = slice
-  const tagSlug = tags.map(tag => tag.split(" ").join("-").toLowerCase())
+const PostHero = ({slice, tags, post}) => {
+   const { primary } = slice
+   const tagSlug = tags.map(tag => tag.split(" ").join("-").toLowerCase())
+
+   const postDate = new Date(post.last_publication_date)
+   const stringDate = postDate.toString()
+   const publicationDate = `${stringDate.slice(4,10)}, ${stringDate.slice(11,15)}`
 
    return (
     <PageContainer>
@@ -39,11 +43,11 @@ const PostHero = ({slice, tags}) => {
       <PostHeader>
       <PostSocial>
       <GridItemTagContainer heroTag={true}>
-        {tags.map((tag, i) => 
-        <Link href={`/${tagSlug[i]}`} key={`${tag[i]}-tag`}>
-          <GridItemTag heroTag={true} key={`${tag}-tag`}>{tag}</GridItemTag>
+         {tags.map((tag, i) => 
+        <Link href={`/blog/${tagSlug[i]}`} key={`${tag[i]}-tag`}>
+          <GridItemTag heroTag={true}>{tag}</GridItemTag>
           </Link>
-          )}
+          )} 
         </GridItemTagContainer>
         <SocialLinks>
            <a href="#"><img src="/twitter.svg"/></a> 
@@ -52,7 +56,7 @@ const PostHero = ({slice, tags}) => {
         </SocialLinks>
       </PostSocial>
       <PrismicRichText field={primary.title}/>
-      <p>june 14, 2022</p>
+      <p>{publicationDate}</p>
       <img src={primary.post_hero_image.url}/>
     </PostHeader>
     </SectionContainer>

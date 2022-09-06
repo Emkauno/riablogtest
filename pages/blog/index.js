@@ -22,20 +22,21 @@ const SectionContainer = styled.div`
   align-items: center;
 `;
 
-const index = (posts) => {
-  const results = posts.posts.results;
+const index = (props) => {
+  const {doc} = props
+  const posts = doc?.results || []
   let featuredPost = [];
 
-  results.map(
-    (post) => post.data.featured_blog_post && featuredPost.push(post)
+  posts.map(
+    (post) => post?.data.featured_blog_post && featuredPost.push(post)
   );
 
   return (
     <Layout>
     <PageContainer>
       <SectionContainer>
-        <FeaturedPost data={featuredPost[0]} />
-        <PostsGrid posts={results}></PostsGrid>
+         <FeaturedPost data={featuredPost[0]} /> 
+        <PostsGrid posts={posts}></PostsGrid> 
       </SectionContainer>
     </PageContainer>
     </Layout>
@@ -47,18 +48,11 @@ export default index;
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
 
-  const posts = await client.getBySomeTags([
-    "Ria Stories",
-    "Remittance",
-    "Immigration",
-    "Life Abroad",
-    "Tech",
-    "Using Ria",
-  ]);
+  const doc = await client.getByType('blog_post');
 
   return {
     props: {
-      posts,
+      doc,
     },
   };
 }
