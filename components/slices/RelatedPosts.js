@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import { PrismicRichText } from "@prismicio/react"
 import { PostsGrid } from '../../components/PostsGrid'
+import { useRouter } from "next/router";
+
 
 
 const PageContainer = styled.div`
@@ -32,13 +34,20 @@ const SectionContainer = styled.div`
   }
   `
 
-const RelatedPosts = ({slice, relatedPosts}) => {
+const RelatedPosts = ({slice, relatedPosts, tags}) => {
+  const router = useRouter();
+  const route = router.asPath.split("/")[2]
+  
+  let maxPosts = []
+  let related = []
+  const getRelated = relatedPosts?.map(post => post.tags.map(tag => tag.includes(tags[0])).some(item => item === true) && related.push(post))
+  const truncatePosts = related.map(post=> maxPosts.length < 3 & post.uid !== route  && maxPosts.push(post)) 
   return (
     <PageContainer>
       <SectionContainer>
         <PrismicRichText field={slice.primary.title}/>
-         <PostsGrid posts={relatedPosts}>
-        </PostsGrid> 
+         <PostsGrid posts={maxPosts}>
+        </PostsGrid>  
       </SectionContainer>
     </PageContainer>
   )

@@ -14,7 +14,7 @@ export const PostCard = ({category, cardImg, cardTitle, cardText, date, uid}) =>
         <img src={cardImg}/>
       </GridItemImg>
       <GridItemText>
-        <GridItemTagContainer>{category.map((pill, i) => <Link href={`/${categorySlug[i]}`} key={`category-${i}`}><GridItemTag>{pill}</GridItemTag></Link>)}</GridItemTagContainer>
+        <GridItemTagContainer>{category.map((pill, i) => <Link href={`/blog/${categorySlug[i]}`} key={`category-${i}`}><GridItemTag>{pill}</GridItemTag></Link>)}</GridItemTagContainer>
         
         <PrismicRichText field={cardTitle}/>
         <PrismicRichText field={cardText}/>

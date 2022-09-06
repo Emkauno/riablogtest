@@ -35,48 +35,45 @@ const NavItem = styled.div`
   }
   }
 `
-const BlogNavbar = () => {
+const BlogNavbar = (props) => {
+  const {doc} = props
+  const pages = doc?.results
+  const getTags = pages?.map(page=>page.tags)
+  const merged = [].concat.apply([], getTags)
+  const uniqueTags = [...new Set(merged)]
+  const formatTags = uniqueTags.map(tag => tag.split(" ").join("-").toLowerCase())
   const router = useRouter();
 
   return (
     <NavContainer>
-      <Link href="/blog">
-        <NavItem className={router.asPath == "/blog" ? "active" : ""}>
+      <Link href={`/blog`} key={`tag-all`}>
+        <NavItem className={router.asPath === "/blog" ? "active" : ""}>
           All
         </NavItem>
       </Link>
-      <Link href="/ria-stories">
-        <NavItem className={router.asPath === "/ria-stories" ? "active" : ""}>
-          Ria Stories
+      {uniqueTags && uniqueTags.map((tag, i)=> 
+        (
+          <Link href={`/blog/${formatTags[i]}`} key={`tag-${i}`}>
+        <NavItem className={router.asPath === `/blog/${formatTags[i]}` ? "active" : ""}>
+          {tag}
         </NavItem>
       </Link>
-      <Link href="/remittance">
-        <NavItem className={router.asPath == "/remittance" ? "active" : ""}>
-          Remittance
-        </NavItem>
-      </Link>
-      <Link href="/immigration">
-        <NavItem className={router.asPath == "/immigration" ? "active" : ""}>
-          Immigration
-        </NavItem>
-      </Link>
-      <Link href="/tech">
-        <NavItem className={router.asPath == "/tech" ? "active" : ""}>
-          Tech
-        </NavItem>
-      </Link>
-      <Link href="/life-abroad">
-        <NavItem className={router.asPath == "/life-abroad" ? "active" : ""}>
-          Life Abroad
-        </NavItem>
-      </Link>
-      <Link href="/using-ria">
-        <NavItem className={router.asPath == "/using-ria" ? "active" : ""}>
-          Using Ria
-        </NavItem>
-      </Link>
+        )
+        )}
     </NavContainer>
   )
 }
 
 export default BlogNavbar
+
+export async function getStaticProps({ previewData }) {
+  const client = createClient({ previewData });
+
+  const doc = await client.getByType('blog_post');
+
+  return {
+    props: {
+      doc,
+    },
+  };
+}

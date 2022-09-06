@@ -18,7 +18,7 @@ function App({ Component, pageProps, router }) {
       internalLinkComponent={internalLinkComponent}
     >
       <PrismicPreview repositoryName={repositoryName}>
-        {pageProps?.doc?.type === "blog_post" ? "" : <BlogNavbar />}
+        <BlogNavbar {...pageProps}/>
         <Component {...pageProps} />
       </PrismicPreview>
     </PrismicProvider>

@@ -5,7 +5,7 @@ import {
  RelatedPosts
 } from "./slices";
 
-const SliceZone = ({ slices, tags, relatedPosts }) => {
+const SliceZone = ({ slices, tags, relatedPosts, post }) => {
   const sliceComponents = {
     post_hero: PostHero,
     post_content: PostContent,
@@ -15,7 +15,7 @@ const SliceZone = ({ slices, tags, relatedPosts }) => {
   return slices.map((slice, index) => {
     const SliceComponent = sliceComponents[slice.slice_type];
     if (SliceComponent) {
-      return <SliceComponent slice={slice} key={`slice-${index}`} tags={tags} relatedPosts={relatedPosts}/>;
+      return <SliceComponent slice={slice} key={`slice-${index}`} tags={tags} relatedPosts={relatedPosts} post={post}/>;
     }
     return null;
   });

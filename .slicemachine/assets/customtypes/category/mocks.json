@@ -1,6 +1,7 @@
 {
   "id": "mock-doc-id",
-  "url": null,
+  "uid": "impossible",
+  "url": "/impossible",
   "type": "category",
   "href": null,
   "tags": [],
@@ -10,7 +11,5 @@
   "linked_documents": [],
   "lang": "en-us",
   "alternate_languages": [],
-  "data": {
-    "category": "increase"
-  }
+  "data": {}
 }

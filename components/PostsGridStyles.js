@@ -27,7 +27,7 @@ export const GridItemImg = styled.div`
   overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 24px;
   background-color: #fbeae0;
 
@@ -106,7 +106,6 @@ export const GridItemTag = styled.div`
   background: ${props => props.heroTag ? "none": "#fff7f2"} ;
   display: inline-block;
   border-radius: 100px;
-  max-width: 30%;
   transition: all .3s ease;
   position: relative;
   cursor: pointer;
@@ -128,7 +127,7 @@ export const GridItemTag = styled.div`
     transform: scaleX(0);
     transition: all .3s ease;
     transform-origin: left;
-    background: var(--Ria-orange);
+    background: ${props => props.heroTag ? "var(--Ria-orange)" : "none" } ;
   }
   @media(max-width: 600px){
     max-width: unset;
