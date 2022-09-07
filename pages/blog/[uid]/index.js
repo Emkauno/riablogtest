@@ -6,6 +6,8 @@ import { FeaturedPost } from "../../../components/FeaturedPost";
 import styled from "styled-components";
 import { Layout } from "../../../components/Layout";
 import { useRouter } from "next/router";
+import {motion} from 'framer-motion'
+
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -44,7 +46,12 @@ const Index = (props) => {
   
   return (
     <Layout>
-    <PageContainer>
+      <motion.div   
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1}}
+        exit={{ y: -20, opacity: 0 }}
+        transition={{ duration: 0.5 }}>
+      <PageContainer>
       <SectionContainer>
         {post[0]?.uid === undefined ?
         <>{featuredPost[0] && <FeaturedPost data={featuredPost[0]} /> }
@@ -62,6 +69,7 @@ const Index = (props) => {
       }
       </SectionContainer>
     </PageContainer>
+     </motion.div>
     </Layout>
   );
 };

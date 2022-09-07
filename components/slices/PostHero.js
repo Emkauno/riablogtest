@@ -3,6 +3,7 @@ import { GridItemTag, GridItemTagContainer } from "../PostsGridStyles"
 import { PrismicRichText } from "@prismicio/react";
 import  Link from 'next/link'
 import styled from 'styled-components'
+import {motion} from 'framer-motion'
 
 const PageContainer = styled.div`
   display: flex;
@@ -57,7 +58,13 @@ const PostHero = ({slice, tags, post}) => {
       </PostSocial>
       <PrismicRichText field={primary.title}/>
       <p>{publicationDate}</p>
-      <img src={primary.post_hero_image.url}/>
+      <motion.div  
+        initial={{ opacity: 0 }}
+        animate={{opacity: 1}}
+        transition={{ duration: 0.5,  delay:0 }}
+        key={`heroImg-test`}>
+        <img src={primary.post_hero_image.url} alt=''/>
+      </motion.div>
     </PostHeader>
     </SectionContainer>
     </PageContainer>

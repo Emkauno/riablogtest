@@ -19,7 +19,7 @@ function App({ Component, pageProps, router }) {
     >
       <PrismicPreview repositoryName={repositoryName}>
         <BlogNavbar {...pageProps}/>
-        <AnimatePresence  exitBeforeEnter>
+        <AnimatePresence  mode='wait'  initial={false}>
             <Component {...pageProps} key={router.asPath.split("/")[2]}/>
         </AnimatePresence>
       </PrismicPreview>

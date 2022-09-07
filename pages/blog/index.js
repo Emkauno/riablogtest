@@ -3,6 +3,7 @@ import { PostsGrid } from "../../components/PostsGrid";
 import { FeaturedPost } from "../../components/FeaturedPost";
 import styled from "styled-components";
 import { Layout } from "../../components/Layout";
+import {motion} from "framer-motion"
 
 const PageContainer = styled.div`
   display: flex;
@@ -33,12 +34,18 @@ const index = (props) => {
 
   return (
       <Layout>
+         <motion.div   
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1}}
+        exit={{ y: -20, opacity: 0 }}
+        transition={{ duration: 0.5 }}>
       <PageContainer>
         <SectionContainer>
           <FeaturedPost data={featuredPost[0]} /> 
           <PostsGrid posts={posts}></PostsGrid> 
         </SectionContainer>
       </PageContainer>
+      </motion.div>
       </Layout>
   );
 };
