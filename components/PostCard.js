@@ -8,7 +8,7 @@ export const PostCard = ({category, cardImg, cardTitle, cardText, date, uid}) =>
   const publicationDate = `${stringDate.slice(4,10)}, ${stringDate.slice(11,15)}`
   const categorySlug = category.map(item => item.split(" ").join("-").toLowerCase())
   return (
-    <Link href={`/blog/${uid}`}>
+    <Link href={`/blog/${uid}`}  passHref>
       <GridItem>
       <GridItemImg>
         <img src={cardImg}/>
