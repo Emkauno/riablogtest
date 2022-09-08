@@ -26,7 +26,7 @@ const SectionContainer = styled.div`
   align-items: center;
 `;
 
-const Index = (props) => {
+const PostPages = (props) => {
   const router = useRouter();
   const route = router.asPath.split("/")[2];
   const { doc, postData } = props;
@@ -39,18 +39,16 @@ const Index = (props) => {
     )
   );
   let featuredPost = [];
-  console.log(props);
   docsArray.map(
     (post) => post?.data.featured_category_post && featuredPost.push(post)
   );
 
   let post = [];
   doc?.results.map((doc) => doc.uid === route && post.push(doc));
-
   return (
       <PageContainer>
         <SectionContainer>
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait" initial={false}>
             {postData === null ? (
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
@@ -70,12 +68,14 @@ const Index = (props) => {
                 transition={{ duration: 0.5 }}
                 key={route}
               >
-                <SliceZone
+                {postData ? <SliceZone
                   slices={postData?.data?.slices}
                   relatedPosts={doc?.results}
                   post={postData}
                   tags={postData?.tags}
-                />
+                /> : null
+                }
+                
               </motion.div>
             )}
           </AnimatePresence>
@@ -84,7 +84,7 @@ const Index = (props) => {
   );
 };
 
-export default Index;
+export default PostPages;
 
 export async function getStaticProps({ previewData, params: { uid } }) {
   const client = createClient({ previewData });

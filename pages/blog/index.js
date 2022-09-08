@@ -34,23 +34,16 @@ const Index = (props) => {
   posts.map((post) => post?.data.featured_blog_post && featuredPost.push(post));
 
   return (
-    <AnimatePresence mode="wait">
-      <PageContainer>
+    doc ? 
+      <PageContainer >
         <SectionContainer>
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -20, opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            key={route}
-          >
             <FeaturedPost data={featuredPost[0]} />
             <PostsGrid posts={posts}></PostsGrid>
-          </motion.div>
         </SectionContainer>
       </PageContainer>
-    </AnimatePresence>
-  );
+   :
+    null 
+ );
 };
 
 export default Index;
