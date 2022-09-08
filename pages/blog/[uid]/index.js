@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import * as prismicH from "@prismicio/helpers";
 import { createClient, linkResolver } from "../../../prismicio";
 import { PostsGrid } from "../../../components/PostsGrid";
@@ -27,6 +28,13 @@ const SectionContainer = styled.div`
 `;
 
 const PostPages = (props) => {
+
+  useEffect(() => {
+   if(typeof window !== "undefined") {
+    window.scrollTo({top: 0})
+   }
+  }, [])
+
   const router = useRouter();
   const route = router.asPath.split("/")[2];
   const { doc, postData } = props;

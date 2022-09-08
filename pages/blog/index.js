@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { createClient } from "../../prismicio";
 import { PostsGrid } from "../../components/PostsGrid";
 import { FeaturedPost } from "../../components/FeaturedPost";
@@ -25,6 +26,12 @@ const SectionContainer = styled.div`
 `;
 
 const Index = (props) => {
+  useEffect(() => {
+    if(typeof window !== "undefined") {
+     window.scrollTo({top: 0})
+    }
+   }, [])
+
   const { doc } = props;
   const posts = doc?.results || [];
   let featuredPost = [];
