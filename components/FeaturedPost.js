@@ -29,7 +29,9 @@ export const FeaturedPost = ({ data }) => {
         </FeaturedText>
       </FeaturedHalf>
       <FeaturedHalf>
-        <FeaturedImg bgImg={data.data.slices[0].primary.grid_image.url}/>
+        <FeaturedImg>
+          <img src={data.data.slices[0].primary.grid_image.url} alt="featured image"/>
+        </FeaturedImg>
       </FeaturedHalf>
     </FeaturedBox>
     </Link>

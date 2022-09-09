@@ -66,7 +66,7 @@ const PostPages = (props) => {
                 key={route}
               >
                 {featuredPost[0] && <FeaturedPost data={featuredPost[0]} />}
-                <PostsGrid posts={docsArray}></PostsGrid>
+                <PostsGrid posts={docsArray} key={'postsPage'}></PostsGrid>
               </motion.div>
             ) : (
               <motion.div

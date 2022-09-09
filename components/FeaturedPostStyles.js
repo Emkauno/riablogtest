@@ -95,21 +95,24 @@ export const FeaturedText = styled.div`
 export const FeaturedImg = styled.div`
   width: 100%;  
   max-width: 450px;
+  max-height: 400px;
   min-height: 400px;
-  background-image: ${props => props.bgImg ? `url(${props.bgImg})` : ""};
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-origin: center;
   background-color: #fbeae0;
   border-radius: 23px;
+  overflow: hidden;
   transition: all .3s  ease-in-out;
   transform: translate3d(0px, 0px, 0px);
   @media(max-width: 500px){
     min-height: 290px;
   }
-
+  img {
+    width: 100%;
+    transition: all .3s ease;
+    transform: scale(1)
+  }
   ${FeaturedBox}:hover && {
-    background-size: 105%;
+    img {
+      transform: scale(1.05)
+    }
   }
   `

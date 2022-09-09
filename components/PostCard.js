@@ -7,14 +7,14 @@ export const PostCard = ({category, cardImg, cardTitle, cardText, date, uid}) =>
   const stringDate = postDate.toString()
   const publicationDate = `${stringDate.slice(4,10)}, ${stringDate.slice(11,15)}`
   const categorySlug = category.map(item => item.split(" ").join("-").toLowerCase())
-  const item = {
+    const item = {
     hidden: { opacity: 0, y: -40 },
     show: { opacity: 1, y: 0 },
   };
 
   return (
     <Link href={`/blog/${uid}`}>
-      <GridItem  variants={item}>
+      <GridItem  variants={item} key={uid}>
       <GridItemImg>
         <img src={cardImg}/>
       </GridItemImg>

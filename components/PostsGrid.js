@@ -1,8 +1,6 @@
 import { GridContainer } from "./PostsGridStyles";
 import { PostCard } from "./PostCard";
 import { motion } from "framer-motion";
-import { useRouter } from 'next/router'
-
 export const PostsGrid = (posts) => {
   const container = {
     hidden: { opacity: 0 },
@@ -13,13 +11,15 @@ export const PostsGrid = (posts) => {
         staggerChildren: 0.25,
       },
     },
+    exit: {
+      opacity: 0
+    }
   };
-  const router = useRouter()
-  return (
 
-    <GridContainer variants={container} initial="hidden" animate="show">
+  return (
+    <GridContainer variants={container} initial="hidden" animate="show" exit="exit">
       {posts.posts.map((post, i) => (
-          <PostCard key={router.route}
+          <PostCard key={`post-${i}`}
             uid={posts.posts[i].uid}
             category={posts.posts[i].tags}
             cardImg={posts.posts[i].data.slices[0].primary.grid_image.url}
