@@ -45,7 +45,7 @@ const Index = (props) => {
       <PageContainer >
         <SectionContainer>
             <FeaturedPost data={featuredPost[0]} />
-            <PostsGrid posts={posts}></PostsGrid>
+            <PostsGrid posts={posts}/>
         </SectionContainer>
       </PageContainer>
    :
