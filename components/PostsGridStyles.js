@@ -1,8 +1,6 @@
 import styled from 'styled-components'
-import { motion } from 'framer-motion'
-import { Link } from 'next/link'
 
-export const GridContainer = styled(motion.div)`
+export const GridContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -12,7 +10,7 @@ export const GridContainer = styled(motion.div)`
   gap: 30px; 
   margin-bottom: 45px;
 `
-export const GridItem  = styled(motion.div)`
+export const GridItem  = styled.div`
   width: 100%;
   max-width: 320px;
   display: flex;
